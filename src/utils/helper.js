@@ -114,3 +114,11 @@ export const row2 = [
   "/assets/png/Cupboard (9).png",
   "/assets/png/Cupboard (10).png",
 ];
+
+export const navLinks = [
+  { name: "HOME", path: "/" },
+  { name: "ABOUT", path: "/about" },
+  { name: "ROADMAP", path: "/roadmap" },
+  { name: "TEAM", path: "/team" },
+  { name: "FAQ", path: "/faq" },
+];

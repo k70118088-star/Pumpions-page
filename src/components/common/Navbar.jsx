@@ -1,10 +1,25 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Icons from "./Icons";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { navLinks } from "@/utils/helper";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
 
   return (
     <div className="fixed w-full mt-4 sm:mt-6 lg:mt-7.5 px-3 sm:px-6 lg:px-0 z-50">
@@ -24,24 +39,30 @@ const Navbar = () => {
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-5 lg:gap-8 text-[#000000] text-sm lg:text-base">
-              <Link href="/">HOME</Link>
-              <Link href="/about">ABOUT</Link>
-              <Link href="/roadmap">ROADMAP</Link>
-              <Link href="/team">TEAM</Link>
-              <Link href="/faq">FAQ</Link>
+              {navLinks.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.path}
+                  className={`underline transition-all duration-300 decoration-5 underline-offset-4 ${
+                    pathname === item.path
+                      ? "decoration-[#FFEC37]"
+                      : "decoration-transparent hover:decoration-[#FFEC37]"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
             </div>
           </div>
 
           {/* Right */}
           <div className="flex items-center gap-2 sm:gap-2.75">
-            {/* Desktop Icons */}
             <div className="hidden md:flex items-center gap-2 sm:gap-2.75">
               <Icons icon={"discord"} />
               <Icons icon={"x"} />
               <Icons icon={"m"} />
             </div>
 
-            {/* Hamburger */}
             <button
               onClick={() => setOpen(!open)}
               className="md:hidden flex flex-col gap-1"
@@ -52,18 +73,18 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        {/* Mobile Menu */}
         <div
           className={`md:hidden fixed top-0 right-0 h-full w-full bg-white transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <button 
-              onClick={() => setOpen(!open)}
-              className=" flex items-center justify-end p-5  gap-1"
-            >
-              {open ? "x" : ""}
-            </button>
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex items-center justify-end p-5 gap-1"
+          >
+            {open ? "x" : ""}
+          </button>
+
           <div className="flex flex-col justify-center items-center gap-4 text-[#000000] text-sm">
             <a href="/">HOME</a>
             <a href="/about">ABOUT</a>
@@ -71,7 +92,6 @@ const Navbar = () => {
             <a href="/team">TEAM</a>
             <a href="/faq">FAQ</a>
 
-            {/* Icons */}
             <div className="flex items-center gap-3 pt-2">
               <Icons icon={"discord"} />
               <Icons icon={"x"} />
