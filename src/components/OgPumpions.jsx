@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import Icons from "./common/Icons";
 import { teamData } from "@/utils/helper";
 import Button from "./common/Button";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -59,8 +58,8 @@ const OgPumpions = () => {
                     {item.role}
                   </p>
                   <div className="flex justify-center mt-4 items-center gap-[11.26px]">
-                    <Icons icon={"dis"} />
-                    <Icons icon={"tiw"} />
+                    <Image  src={"/assets/png/dis.png"} width={35} height={35}/>
+                <Image  src={"/assets/png/tiw.png"} width={35} height={35}/>
                   </div>
                 </div>
               </SwiperSlide>
@@ -86,8 +85,8 @@ const OgPumpions = () => {
                 {item.role}
               </p>
               <div className="flex justify-center mt-4 items-center gap-[11.26px]">
-                <Icons icon={"dis"} />
-                <Icons icon={"tiw"} />
+                <Image  src={"/assets/png/dis.png"} width={35} height={35}/>
+                <Image  src={"/assets/png/tiw.png"} width={35} height={35}/>
               </div>
             </div>
           ))}
