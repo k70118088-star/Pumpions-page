@@ -37,7 +37,7 @@ const Community = () => {
                 <h3 className="mt-[18.7px] text-base lg:text-[12px] font-normal text-center">
                   {item.title}
                 </h3>
-                <p className="mt-[4.3px] text-center text-[10px] lg:text-[6.53px] font-normal leading-[204.97%]">
+                <p className="mt-[4.3px] text-center opacity-70 text-[10px] lg:text-[6.53px] font-normal leading-[204.97%]">
                   {item.desc}
                 </p>
               </div>
@@ -63,7 +63,7 @@ const Community = () => {
                     <h3 className="mt-[18.7px] text-base font-normal text-center">
                       {item.title}
                     </h3>
-                    <p className="mt-[4.3px] text-center text-[10px] font-normal leading-[204.97%]">
+                    <p className="mt-[4.3px] text-center opacity-70 text-[10px] font-normal leading-[204.97%]">
                       {item.desc}
                     </p>
                   </div>
