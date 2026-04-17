@@ -9,7 +9,6 @@ const Carousol = () => {
   return (
     <div
       className="w-full">
-
       {/* Row 1 → Left to Right */}
       <Swiper
         modules={[Autoplay]}
@@ -22,10 +21,10 @@ const Carousol = () => {
           disableOnInteraction: false,
           reverseDirection: true, 
         }}
-        className="mt-[50px] lg:mt-[104px] max-w-315 ml-0!"
+        className="mt-12.5 lg:mt-26 max-w-315 ml-0!"
       >
         {[...row1, ...row1].map((img, i) => (
-          <SwiperSlide key={i} className="!w-auto">
+          <SwiperSlide key={i} className="w-auto!">
             <Card img={img} />
           </SwiperSlide>
         ))}
@@ -43,10 +42,9 @@ const Carousol = () => {
           disableOnInteraction: false,
           reverseDirection: false, 
         }}
-        className="mt-6 max-w-315 mr-0!"
-      >
+        className="mt-6 max-w-315 mr-0!">
         {[...row2, ...row2].map((img, i) => (
-          <SwiperSlide key={i} className="!w-auto">
+          <SwiperSlide key={i} className="w-auto!">
             <Card img={img} />
           </SwiperSlide>
         ))}

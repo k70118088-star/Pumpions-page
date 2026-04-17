@@ -32,7 +32,7 @@ const Community = () => {
               key={index}
               className="max-w-69.5 lg:max-w-[181.89px] h-76.75 lg:h-[200.55px] leading-[154%] text-[#000000] hover:leading-[204.97%] w-full bg-img bg-[url('/assets/webp/membership-card-bg-white.webp')] hover:bg-[url('/assets/webp/membership-card-bg-orange.webp')] duration-300 bg-cover bg-center flex flex-col justify-center items-center hover:text-white"
             >
-              <div className="w-full p-[36px] lg:p-[23px] mx-auto flex flex-col items-center justify-center">
+              <div className="w-full p-9 lg:p-5.75 mx-auto flex flex-col items-center justify-center">
                 <Icons icon={item.icon} />
                 <h3 className="mt-[18.7px] text-base lg:text-[12px] font-normal text-center">
                   {item.title}
@@ -58,7 +58,7 @@ const Community = () => {
             {cardsData.map((item, index) => (
               <SwiperSlide key={index}>
                 <div className="max-w-69.5 h-76.75 leading-[154%] text-[#000000] hover:leading-[204.97%] w-full bg-img bg-[url('/assets/webp/membership-card-bg-white.webp')] hover:bg-[url('/assets/webp/membership-card-bg-orange.webp')] duration-300 bg-cover bg-center flex flex-col justify-center items-center hover:text-white">
-                  <div className="w-full p-[36px] mx-auto flex flex-col items-center justify-center">
+                  <div className="w-full p-9 mx-auto flex flex-col items-center justify-center">
                     <img src={item.img} alt="img"/>
                     <h3 className="mt-[18.7px] text-base font-normal text-center">
                       {item.title}
